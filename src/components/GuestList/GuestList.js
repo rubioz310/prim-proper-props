@@ -2,6 +2,7 @@ import Guest from "../Guest/Guest";
 
 function GuestList(props){
     let guestList = props.guestList;
+    let deleteGuest = props.deleteGuest;
 
     return(
         <div>
@@ -15,7 +16,7 @@ function GuestList(props){
             </thead>
             <tbody>
               {guestList.map(guest => (
-                <Guest guest={guest}/>
+                <Guest guest={guest} deleteGuest={deleteGuest}/>
               ))}
             </tbody>
                   </table>

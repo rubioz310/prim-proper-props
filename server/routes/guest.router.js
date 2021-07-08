@@ -37,5 +37,20 @@ router.post('/', (req, res) => {
         })
 })
 
+//DELETE guest route
+router.delete('/:id', (req, res) =>{
+    let id = req.params.id;
+    let queryText = `DELETE FROM "guests"
+                    WHERE "id" = $1`;
+
+    pool.query(queryText, [id])
+    .then(result => {
+        res.sendStatus(202);
+    }).catch(err => {
+        console.log(`Error making query ${queryText}`, err);
+        res.sendStatus(500);
+    })
+});
+
 
 module.exports = router;
