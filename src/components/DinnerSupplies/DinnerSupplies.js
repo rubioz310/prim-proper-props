@@ -1,17 +1,13 @@
+import SilverWare from "../SilverWare/SilverWare";
+
 function DinnerSupplies(props){
-    let guestList = props.guestList;
+    let count = props.guestList.length;
     return (
         <>
             <h2>Dinner Supplies</h2>
-            <div>
-                Spoons: {guestList.length * 2}
-            </div>
-            <div>
-                Forks: {guestList.length * 2}
-            </div>
-            <div>
-                Knives: {guestList.length * 2}
-            </div>
+            <SilverWare name="Spoons" count={count}/>
+            <SilverWare name="forks" count={count}/>
+            <SilverWare name="Knives" count={count}/>
         </>
     );
 }
