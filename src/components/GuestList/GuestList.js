@@ -1,3 +1,5 @@
+import Guest from "../Guest/Guest";
+
 function GuestList(props){
     let guestList = props.guestList;
 
@@ -13,10 +15,7 @@ function GuestList(props){
             </thead>
             <tbody>
               {guestList.map(guest => (
-                <tr key={guest.id}>
-                  <td>{guest.name}</td>
-                  <td>{String(guest.kidsMeal)}</td>
-                </tr>
+                <Guest guest={guest}/>
               ))}
             </tbody>
                   </table>
