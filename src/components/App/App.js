@@ -4,6 +4,8 @@ import './App.css';
 
 //Rerouting stuff
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer'
+import DinnerSupplies from '../DinnerSupplies/DinnerSupplies';
 
 function App() {
   let [guestList, setGuestList] = useState([]);
@@ -118,20 +120,8 @@ function App() {
           ))}
         </tbody>
       </table>
-      <h2>Dinner Supplies</h2>
-      <div>
-        Spoons: {guestList.length * 2}
-      </div>
-      <div>
-        Forks: {guestList.length * 2}
-      </div>
-      <div>
-        Knives: {guestList.length * 2}
-      </div>
-      <footer>
-        <h3>Have fun!</h3>
-        <p>Don't forget to mind your Ps and Qs!</p>
-      </footer>
+      <DinnerSupplies guestList={guestList}/>
+      <Footer />
     </div>
   );
 }
